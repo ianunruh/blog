@@ -13,3 +13,13 @@ params:
     url: https://github.com/ianunruh
   - name: LinkedIn
     url: https://www.linkedin.com/in/ianunruh
+
+  ShowShareButtons: true
+  ShowReadingTime: true
+  ShowCodeCopyButtons: true
+  ShowPostNavLinks: true
+
+  editPost:
+    URL: https://github.com/ianunruh/blog/tree/main/content
+    Text: Suggest Changes
+    appendFilePath: true
