@@ -5,8 +5,8 @@ title: Ian Unruh
 
 params:
   homeInfoParams:
-    Title: Random collection of my tech learnings
-    Content: Kubernetes, DevOps, OpenStack, Homelab
+    Title: Random collection of tech learnings
+    Content: DevOps, Kubernetes, OpenStack, Homelab
 
   socialIcons:
   - name: GitHub
