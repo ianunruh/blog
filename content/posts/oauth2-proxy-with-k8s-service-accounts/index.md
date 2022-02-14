@@ -106,7 +106,7 @@ If the `system:service-account-issuer-discovery` role does not exist in your clu
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: system:service-account-issuer-discoveryy
+  name: system:service-account-issuer-discovery
 rules:
 - nonResourceURLs:
   - /openid/v1/jwks
