@@ -169,7 +169,7 @@ The 1st component of `extra-jwt-issuers` is the external URL for the Kubernetes 
 
 When OAuth2 Proxy starts up and fetches the JSON Web Keys for identity providers, it connects to the issuers over TLS and verifies their server certificates. OAuth2 Proxy uses the system CA bundle for verifying those certificates. Your Kubernetes cluster may use self-signed certificates, in which case the authority for which will need to be added to the system CA bundle in the OAuth2 Proxy pods. The Helm chart provides a method for supplying our own system CA bundle through a config map.
 
-Create the file `ca-certificates.crt` locally with the certificate authority for the Kubernetes cluster, and also include any other certificates needed to verify the identity provider that is primary configured for OAuth2 Proxy. Then create a configmap using the following command.
+Create the file `ca-certificates.crt` locally with the certificate authority for the Kubernetes cluster, and also include any other certificates needed to verify the identity provider that is primarily configured for OAuth2 Proxy. Then create a configmap using the following command.
 
 ```bash
 kubectl -n oauth2-proxy create configmap oauth2-proxy-ssl-certs --from-file=ca-certificates.crt
