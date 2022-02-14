@@ -183,14 +183,14 @@ Ensure that the ingress is configured to use OAuth2 Proxy. For the kube-promethe
 prometheus:
   ingress:
     annotations:
-      nginx.ingress.kubernetes.io/auth-url: "https://oauth2-proxy.example.com/oauth2/auth"
-      nginx.ingress.kubernetes.io/auth-signin: "https://oauth2-proxy.example.com/oauth2/start?rd=https%3A%2F%2F$host$escaped_request_uri"
+      nginx.ingress.kubernetes.io/auth-url: https://oauth2-proxy.example.com/oauth2/auth
+      nginx.ingress.kubernetes.io/auth-signin: https://oauth2-proxy.example.com/oauth2/start
 
 alertmanager:
   ingress:
     annotations:
-      nginx.ingress.kubernetes.io/auth-url: "https://oauth2-proxy.example.com/oauth2/auth"
-      nginx.ingress.kubernetes.io/auth-signin: "https://oauth2-proxy.example.com/oauth2/start?rd=https%3A%2F%2F$host$escaped_request_uri"
+      nginx.ingress.kubernetes.io/auth-url: https://oauth2-proxy.example.com/oauth2/auth
+      nginx.ingress.kubernetes.io/auth-signin: https://oauth2-proxy.example.com/oauth2/start
 ```
 
 Once applied, visiting the ingress for either app should result in a redirect to the OIDC provider.
