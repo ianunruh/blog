@@ -389,7 +389,7 @@ On a totally different limb, service-to-service access could be achieved by usin
 
 It took many different sources to put all this together, here's some in order of relevance.
 
-* [Service to Service Authentication on Kubernetes](https://medium.com/in-the-weeds/service-to-service-authentication-on-kubernetes-94dcb8216cdc) - This provided most of the inspiration for my setup. Since the linked post was written, Kubernetes added the necessary Service Account Issuer Discovery feature that allow my setup to work.
+* [Service to Service Authentication on Kubernetes](https://medium.com/in-the-weeds/service-to-service-authentication-on-kubernetes-94dcb8216cdc) - This provided most of the inspiration for my setup. Since the linked post was written, Kubernetes added the necessary Service Account Issuer Discovery feature that allows my setup to work.
 * [Service Account signing key retrieval KEP](https://github.com/kubernetes/enhancements/tree/master/keps/sig-auth/1393-oidc-discovery)
 * [kube-apiserver CLI reference](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/)
 * [OAuth2 Proxy config reference](https://oauth2-proxy.github.io/oauth2-proxy/docs/configuration/overview/)
