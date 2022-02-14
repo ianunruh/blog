@@ -25,7 +25,7 @@ OAuth2 Proxy runs on the infrastructure cluster, and all environments use it fro
 
 ## Service Account Issuer Discovery
 
-In Kubernetes v1.18, a feature was added to the API server to expose the service account issuer using the standard OIDC discovery method. This feature moved to beta stage by v1.20 and GA stage by v1.21. This OIDC discovery mechanism is used by OAuth2 Proxy (along with other OIDC clients) to retrieve the public keys used to verify signed tokens.
+In Kubernetes v1.18, a feature called [Service Account Issuer Discovery](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#service-account-issuer-discovery) was added to the API server to expose the service account token issuer using the [standard OIDC discovery mechanism](https://ldapwiki.com/wiki/Openid-configuration). This feature moved to beta stage by Kubernetes v1.20 and GA stage by Kubernetes v1.21. This OIDC discovery mechanism is used by OAuth2 Proxy (along with other OIDC clients) to retrieve the public keys used to verify signed tokens.
 
 My Kubernetes clusters are all deployed using Kubeadm, so there was some extra setup involved to make this mechanism work correctly. If you're using a hosted Kubernetes offering, this will likely work out of the box. Skip to the [Testing the issuer discovery API](#testing-the-issuer-discovery-api) section to verify everything is working.
 
