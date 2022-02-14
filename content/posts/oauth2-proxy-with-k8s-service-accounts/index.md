@@ -234,6 +234,32 @@ Note that the audience `oauth2-proxy` used in the example is matched up with the
 
 Kubernetes will take care of keeping the token on disk up-to-date when it gets close to expiry. It's up to the application to read the updated tokens from disk periodically.
 
+When decoding the service account JWT, with a tool like [jwt-cli](https://github.com/mike-engel/jwt-cli) or [jwt.io](https://jwt.io), the contents will be similar to the following snippet.
+
+```json
+{
+  "aud": [
+    "oauth2-proxy"
+  ],
+  "exp": 1644850879,
+  "iat": 1644807679,
+  "iss": "https://kubernetes.example.com",
+  "kubernetes.io": {
+    "namespace": "default",
+    "pod": {
+      "name": "test-oauth-client-bph8s",
+      "uid": "b5a0386a-b9cf-40fc-ae58-e2d8ba2c710f"
+    },
+    "serviceaccount": {
+      "name": "default",
+      "uid": "9fe7bb4a-753c-494f-bcdb-a421e4fde50d"
+    }
+  },
+  "nbf": 1644807679,
+  "sub": "system:serviceaccount:default:default"
+}
+```
+
 At this point, it's now possible to use service account tokens to access web applications behind OAuth2 Proxy.
 
 ## Integrating tokens with Karma
