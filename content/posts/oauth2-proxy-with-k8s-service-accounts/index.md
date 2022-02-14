@@ -100,6 +100,21 @@ subjects:
   name: system:unauthenticated
 ```
 
+If the `system:service-account-issuer-discovery` role does not exist in your cluster, it can be created from the following resource.
+
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: system:service-account-issuer-discoveryy
+rules:
+- nonResourceURLs:
+  - /openid/v1/jwks
+  - /.well-known/openid-configuration
+  verbs:
+  - get
+```
+
 ### Testing the issuer discovery API
 
 Substitute the base URL for your Kubernetes cluster and try out the following command.
